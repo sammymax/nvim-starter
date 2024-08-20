@@ -22,3 +22,6 @@ map("n", "<leader>4", "4gt")
 
 map("n", "j", "gj")
 map("n", "k", "gk")
+
+map("i", "<F1>", "<ESC> :!python % <enter>")
+map("n", "<F1>", ":!python % <enter>")
