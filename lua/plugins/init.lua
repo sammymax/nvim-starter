@@ -13,6 +13,20 @@ return {
     end,
   },
 
+  {
+    "hrsh7th/nvim-cmp",
+    opts = function()
+      local opts = require "nvchad.configs.cmp"
+      local cmp = require "cmp"
+
+      opts.completion = {
+        completeopt = "menu,menuone,noselect,noinsert",
+      }
+      opts.mapping["<CR>"] = cmp.mapping.confirm { select = false }
+      return opts
+    end,
+  },
+
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
   -- 	opts = {
