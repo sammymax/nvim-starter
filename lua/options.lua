@@ -10,3 +10,4 @@ local o = vim.o
 o.relativenumber = true
 o.cursorlineopt = "both"
 opt.whichwrap = ""
+vim.g.python_recommended_style = 0
