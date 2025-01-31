@@ -25,3 +25,12 @@ map("n", "k", "gk")
 
 map("i", "<F1>", "<ESC> :!python % <enter>")
 map("n", "<F1>", ":!python % <enter>")
+
+-- Make 'q' act like 'bd' if more than one buffer is open, otherwise just 'q'.
+vim.cmd([[
+  cnoreabbrev <expr> q getcmdtype() == ":" && getcmdline() == 'q' && len(getbufinfo({ 'buflisted': 1 })) > 1 ? 'bd' : 'q'
+]])
+-- Make 'Q' emulate 'q'.
+vim.cmd([[
+  cnoreabbrev <expr> Q getcmdtype() == ":" && getcmdline() == 'Q' ? (len(getbufinfo({ 'buflisted': 1 })) > 1 ? 'bd' : 'q') : 'Q'
+]])
