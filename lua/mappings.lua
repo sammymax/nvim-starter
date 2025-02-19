@@ -22,6 +22,10 @@ map("n", "<leader>4", "4gt")
 
 map("n", "j", "gj")
 map("n", "k", "gk")
+-- If we're using change, we are probably discarding the existing stuff, and
+-- we're often pasting in the new stuff from clipboard, so use the black hole
+-- register for the old stuff to avoid overwriting the clipboard.
+map("n", "c", "\"_c")
 
 map("i", "<F1>", "<ESC> :!python % <enter>")
 map("n", "<F1>", ":!python % <enter>")
