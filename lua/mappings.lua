@@ -27,8 +27,8 @@ map("n", "k", "gk")
 -- register for the old stuff to avoid overwriting the clipboard.
 map("n", "c", "\"_c")
 
-map("i", "<F1>", "<ESC> :!python % <enter>")
-map("n", "<F1>", ":!python % <enter>")
+map("i", "<F1>", "<ESC>:w<CR>:!python % <enter>")
+map("n", "<F1>", ":w<CR>:!python % <enter>")
 
 -- Make 'q' act like 'bd' if more than one buffer is open, otherwise just 'q'.
 vim.cmd([[
